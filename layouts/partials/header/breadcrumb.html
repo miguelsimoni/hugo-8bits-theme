@@ -1,0 +1,27 @@
+<nav>
+  <div class="container my-5 text-center">
+    <div class="row">
+      <div class="col">
+        {{ template "breadcrumbnav" (dict "p1" . "p2" . "showCurrent" .Site.Params.breadcrumb.showCurrent) }}
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{ define "breadcrumbnav" }}
+  {{ if .p1.Parent }}
+    {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 ) }}
+  {{ else if not .p1.IsHome }}
+    {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
+  {{ end }}
+  {{ if eq .p1 .p2 }}
+    {{ if .showCurrent }}
+    <span class="active">{{ .p1.Title }}</span>
+    {{ end }}
+  {{ else }}
+    <span>
+      <a {{ if .Site.Params.darkMode }}class="link-light"{{ end }} href="{{ .p1.Permalink | absLangURL }}">{{ .p1.Title }}</a>
+    </span>
+    <span>/</span>
+  {{ end }}
+{{ end }}

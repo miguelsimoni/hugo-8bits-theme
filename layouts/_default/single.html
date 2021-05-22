@@ -1,0 +1,71 @@
+{{ define "main" }}
+<article>
+  <div class="container">
+
+    <div class="row mb-5">
+      <div class="col text-center">
+        <h1 class="nes-text is-primary">{{ .Title }}</h1>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center m-5 text-muted">
+      <small>
+        <time datetime="{{ .Date }}">{{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
+        |
+        <span id="readingtime">{{ T "reading_time" .ReadingTime }}</span>
+      </small>
+    </div>
+  
+    <div class="row mb-5">
+      <div class="col">
+        {{ .Content }}
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col text-end text-right">
+        {{ T "by" }} <em>{{ if .Params.Author }}{{ .Params.Author }}{{ else }}{{ .Site.Params.Author }}{{ end }}</em>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<aside id="meta">
+  {{ with .Params.tags }}
+  <div class="d-flex justify-content-center m-5">
+    {{ range . }}
+    <a class="nes-badge mx-3" href="{{ "tags/" | absLangURL }}{{ . | urlize }}" rel="tag">
+      <span class="is-primary">{{ . }}</span>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- Sharing options -->
+
+  <!-- Comments -->
+  <section id="comments">
+    <div class="d-flex justify-content-center m-5">
+      {{ template "_internal/disqus.html" . }}
+      {{ partial "disqus.html" . }}
+    </div>
+  </section>
+
+  <!-- Article navigation -->
+  <div class="row d-flex justify-content-evenly m-5">
+    <div class="col-6 text-center">
+      <a class="nes-btn is-primary" href="{{ "post/" | absLangURL }}">
+        {{ T "go_back" }}
+      </a>
+    </div>
+
+    <div class="col-6 text-center">
+      <a class="nes-btn is-primary" href="{{ .Site.BaseURL | absLangURL }}">
+        {{ T "go_home" }}
+      </a>
+    </div>
+  </div>
+
+</aside>
+{{ end }}

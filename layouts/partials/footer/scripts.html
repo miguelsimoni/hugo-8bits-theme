@@ -1,0 +1,2 @@
+{{ $js := resources.Match "js/**.js" | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>

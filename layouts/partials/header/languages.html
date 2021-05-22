@@ -1,0 +1,13 @@
+<div id="langMenu">
+  <div class="nes-text text-muted p-2">
+    {{ T "language" }}
+  </div>
+  {{ range .Site.Home.AllTranslations }}
+  <label>
+    <input type="radio" class="nes-radio is-dark" name="language" value="{{ .Language.LanguageName }}" 
+           {{ if eq $.Site.Language.LanguageName .Language.LanguageName }}checked{{ end }} 
+           onclick="selectLanguageHandler({{ .Permalink | absLangURL }})"/>
+    <span><small>{{ .Language.LanguageName }}</small></span>
+  </label>
+  {{ end }}
+</div>

@@ -1,0 +1,25 @@
+language: Language
+
+copyright: Copyright
+
+word_count:
+  one: 1 word
+  other: "{{ .Count }} words"
+
+reading_time:
+  one: ~1 minute
+  other: "~{{ .Count }} minutes"
+
+read_more: Read more...
+
+load_more: "Load more"
+
+loading: Loading...
+
+go_back: Back
+
+go_home: Home
+
+by: "By: "
+
+page_not_found: This may not be the page you were looking for...

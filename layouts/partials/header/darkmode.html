@@ -1,0 +1,15 @@
+<div id="darkModeMenu">
+  <div class="nes-text is-disabled text-muted p-2">
+    {{ T "dark_mode" }}
+  </div>
+  <small>
+    <label>
+      <input type="radio" class="nes-radio {{ if .Site.Params.darkMode }}is-dark{{ end }}" name="darkMode" id="darkModeEnabled"/>
+      <span>{{ T "enabled" }}</span>
+    </label>    
+    <label>
+      <input type="radio" class="nes-radio {{ if .Site.Params.darkMode }}is-dark{{ end }}" name="darkMode"  id="darkModeDisabled"/>
+      <span>{{ T "disabled" }}</span>
+    </label>
+  </small>
+</div>

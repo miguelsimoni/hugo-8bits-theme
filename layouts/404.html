@@ -1,0 +1,6 @@
+{{ define "main"}}
+<section id="page_not_found">
+  <h1>{{ T "page_not_found" }}</h1>
+  <a href="{{ .Site.BaseURL | relLangURL }}">{{ T "go_home" }}</a>
+</section>
+{{ end }}

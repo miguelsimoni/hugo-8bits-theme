@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="container">
+
+  {{/*  {{ .Render "section-header" }}  */}}
+
+  <div id="posts">
+    {{ $paginator := .Paginator }}
+    {{ range $index, $item := $paginator.Pages }}
+      <article>
+        {{/*  {{ .Render "summary" }}  */}}
+        <div class="w-100 nes-balloon {{ if mod $index 2 }}from-left{{ else }}from-right{{ end }} nes-pointer is-dark">
+          <a class="link-primary" href="{{ .Permalink | absLangURL }}">
+            <h2>{{ .Title }}</h2>
+          </a>
+      
+          <small class="text-muted">
+            {{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }} | {{ T "reading_time" .ReadingTime }}
+          </small>
+      
+          <p>
+            {{ .Summary }}
+          </p>
+      
+          <div class="text-end">
+            <a class="link-primary" href="{{ .Permalink | absLangURL }}">{{ T "read_more" . }}</a>
+          </div>
+        </div>
+      </article>
+    {{ end }}
+
+    {{ if .Site.Params.pagination.loader }}
+      {{ if $paginator.HasNext }}
+      <div id="loader" class="row mb-5">
+        <div class="col text-center">
+          <button type="button" class="nes-btn is-primary"
+                  onclick="loaderHandler({{ .Permalink }},{{ add 1 $paginator.PageNumber }})">
+            <span>{{ T "load_more" }}</span>
+            <span class="visually-hidden">{{ T "loading" }}</span>
+          </button>
+        </div>
+      </div>
+      {{ end }}
+    {{ else }}
+    <div class="row">
+      <div class="col">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

@@ -1,0 +1,44 @@
+<!-- sidebar start -->
+<aside>
+  <nav>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="nes-container with-title is-centered is-dark">
+        <span class="title">Menu</span>
+        <div class="lists">
+          <div class="nes-list">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+                <div {{ if $currentPage.HasMenuCurrent "main" . }}class="active"{{ end }}>
+                  <a class="nes-text is-primary" href="#">
+                    {{ .Pre }} <span>{{ .Name }}</span>
+                  </a>
+                </div>
+                <div class="sub-menu">
+                {{ range .Children }}
+                  <div {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
+                    <a class="nes-text is-primary" href="{{ .URL | absLangURL }}">
+                      {{ .Pre }} <span>{{ .Name }}</span>
+                    </a>
+                  </div>
+                {{ end }}
+                </div>
+              {{ else }}
+                <div class="p-2">
+                  <a class="nes-text link-light {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}" href="{{ .URL | absLangURL }}">
+                    {{ .Pre }} <span>{{ .Name }}</span>
+                  </a>
+                </div>
+              {{ end }}
+            {{ end }}
+
+            {{ if .Site.Params.languagesMenuEnabled }}
+              {{ partial "header/languages.html" . }}
+            {{ end }}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</aside>

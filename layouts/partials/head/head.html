@@ -1,0 +1,21 @@
+<head>
+  {{ partial "head/meta.html" . }}
+
+  {{ partial "head/favicons.html" . }}
+
+  <base href="{{ .Site.BaseURL | relLangURL }}">
+
+  <title>{{ .Site.Title }}</title>
+
+  <link rel="canonical" href="{{ .Permalink | absLangURL }}">
+  {{ with .OutputFormats.Get "RSS" }}
+  <link href="{{ .RelPermalink | absLangURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  {{ end }}
+
+  {{ partial "head/includes.html" . }}
+
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+
+  {{ template "_internal/google_analytics.html" . }}
+</head>
