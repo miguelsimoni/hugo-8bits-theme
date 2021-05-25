@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("form").addEventListener("submit", sendEmail);
+  var form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", sendEmail);    
+  }
 });
 
 function sendEmail(e) {
