@@ -9,7 +9,7 @@
       <article>
         {{/*  {{ .Render "summary" }}  */}}
         <div class="w-100 nes-balloon {{ if mod $index 2 }}from-left{{ else }}from-right{{ end }} nes-pointer is-dark">
-          <a class="link-primary" href="{{ .Permalink | absLangURL }}">
+          <a class="is-primary" href="{{ .Permalink | absLangURL }}">
             <h2>{{ .Title }}</h2>
           </a>
       
@@ -22,7 +22,7 @@
           </p>
       
           <div class="text-end">
-            <a class="link-primary" href="{{ .Permalink | absLangURL }}">{{ T "read_more" . }}</a>
+            <a class="is-primary" href="{{ .Permalink | absLangURL }}">{{ T "read_more" . }}</a>
           </div>
         </div>
       </article>

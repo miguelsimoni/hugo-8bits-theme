@@ -1,6 +1,6 @@
 <header>
-  <div class="fixed-top p-5 bg-dark text-center">
-      <h1 class="nes-text is-primary">{{ .Site.Title }}</h1>
+  <div class="fixed-top p-5 {{ if not .IsHome }}bg-dark{{ end }} text-center">
+    <h1 class="nes-text">{{ .Site.Title }}</h1>
   </div>
 
   {{/*  {{ partial "header/nav.html" . }}  */}}

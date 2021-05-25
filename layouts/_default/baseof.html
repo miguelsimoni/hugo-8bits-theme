@@ -2,8 +2,8 @@
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head/head.html" . }}
 
-<body class="bg-dark text-light">
-    {{ partial "header/header.html" . }}
+<body class="bg-dark text-light {{ if or .IsHome .IsNode }}bg-image{{ end }} {{ if .Site.Params.background.parallax }}parallax{{ end }}" data-parallax-speed="{{ .Site.Params.background.speed | default 5 }}">
+  {{ partial "header/header.html" . }}
 
   <main aria-role="main">
     {{ block "main" . }}{{ end }}

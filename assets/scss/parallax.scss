@@ -1,0 +1,11 @@
+.parallax {
+    background-position: center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-origin: border-box;
+    background-attachment: fixed;
+}
