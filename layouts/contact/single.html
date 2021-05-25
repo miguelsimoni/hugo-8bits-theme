@@ -1,0 +1,84 @@
+{{ define "main"}}
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col text-center">
+        <p>{{ .Content }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col d-grid col-md-8 mx-auto">
+        <form action="{{ .Site.Params.contact.formAction }}" method="POST" class="needs-validation" novalidate>
+
+          <div class="row">
+            <div class="col-md mb-3">
+              <label for="name">{{ T "contact_name" }}</label>
+              <input type="text" class="nes-input is-dark" id="name" name="name" placeholder="{{ T "contact_name_tip" }}" 
+                     pattern="{{ .Site.Params.contact.validation.namePattern }}" required>
+              <div class="valid-feedback">{{ T "contact_valid_feedback" }}</div>
+              <div class="invalid-feedback">{{ T "contact_invalid_feedback" (dict "field" "name" "campo" "nombre") }}</div>
+            </div>
+    
+            <div class="col-md mb-3">
+              <label for="email">{{ T "contact_email" }}</label>
+              <input type="email" class="nes-input is-dark" id="email" name="email" placeholder="{{ T "contact_email_tip" }}" 
+                     pattern="{{ .Site.Params.contact.validation.emailPattern }}" required>
+              <div class="valid-feedback">{{ T "contact_valid_feedback" }}</div>
+              <div class="invalid-feedback">{{ T "contact_invalid_feedback" (dict "field" "email" "campo" "email") }}</div>
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="col mb-3">
+              <label for="message">{{ T "contact_message" }}</label>
+              <textarea class="nes-textarea is-dark" id="message" name="message" placeholder="{{ T "contact_message_tip" }}" rows="5" required></textarea>
+              <div class="valid-feedback">{{ T "contact_valid_feedback" }}</div>
+              <div class="invalid-feedback">{{ T "contact_invalid_feedback" (dict "field" "message" "campo" "mensaje") }}</div>
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="d-grid col-md-3 mx-auto">
+              <button type="submit" class="nes-btn is-primary">
+                <span>{{ T "send" }}</span>
+                <span class="visually-hidden">{{ T "sending" }}</span>
+              </button>
+            </div>
+          </div>
+      
+          <input type="hidden" name="subject" value="{{ T "contact_subject" }}" />
+          <input type="hidden" name="language" value="{{ .Site.LanguageCode }}" />      
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="thanks" class="visually-hidden">
+  <div class="container">
+    <div class="row m-5">
+      <div class="col text-center">
+        <h1>{{ T "thanks" }}</h1>
+      </div>
+    </div>
+    <div class="row m-5">
+      <div class="col text-center">
+        <p>{{ T "thanks_message" }}</p>
+      </div>
+    </div>
+    <div class="row m-5">
+      <div class="d-grid col-md-2 mx-auto">
+        <a class="nes-btn is-primary" href="{{ .Site.BaseURL | relLangURL }}">{{ T "go_home" }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

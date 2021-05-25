@@ -23,3 +23,30 @@ go_home: Home
 by: "By: "
 
 page_not_found: This may not be the page you were looking for...
+
+# contact
+contact_name: Name
+
+contact_name_tip: Type in your name here
+
+contact_email: Email
+
+contact_email_tip: Type in your email here
+
+contact_message: Message
+
+contact_message_tip: Type in your message here
+
+contact_subject: Message from the website
+
+contact_valid_feedback: Looks good!
+
+contact_invalid_feedback: "Please, type in your {{ .field }}."
+
+send: Send
+
+sending: Sending...
+
+thanks: Thank you!
+
+thanks_message: Thank you for contact us.
