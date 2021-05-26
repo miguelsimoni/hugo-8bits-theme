@@ -7,5 +7,5 @@
 {{/*  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />  */}}
 <link href="{{ "vendor/nes-style/css/nes.min.css" | absURL }}" rel="stylesheet" />
 
-{{ $css := resources.Match "scss/**.scss" | resources.Concat "css/bundle.scss" | resources.ExecuteAsTemplate "_variables.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $css := resources.Match "scss/**.scss" | resources.Concat "css/bundle.scss" | resources.ExecuteAsTemplate "bundle.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
