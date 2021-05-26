@@ -1,14 +1,14 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Hugo 8bits Theme"
+name = "Hugo 8-bits Theme"
 license = "MIT"
 licenselink = "https://github.com/miguelsimoni/hugo-8bits-theme/blob/main/LICENSE"
-description = "8bits theme for Hugo"
+description = "8-bits theme for Hugo"
 homepage = "https://miguelsimoni.github.io/hugo-8bits-theme"
-tags = []
-features = []
-min_version = "0.41.0"
+tags = ["blog","responsive","clean","minimal","simple","personal","minimalist","bootstrap","bootstrap 5","dark","mobile","fast","customizable","multilingual","disqus","syntax highlighting","landing page","contact form","starter","minimalistic","theme","hugo templates","pages","technical","typography","hugo theme","dark mode","highlighting","website","contact","html5up","retro","about us","social networks"]
+features = ["blog","responsive","clean","minimal","simple","personal","minimalist","bootstrap","bootstrap 5","dark","mobile","fast","customizable","multilingual","disqus","syntax highlighting","landing page","contact form","starter","minimalistic","theme","hugo templates","pages","technical","typography","hugo theme","dark mode","highlighting","website","contact","html5up","retro","about us","social networks"]
+min_version = "0.81.0"
 
 [author]
   name = "Miguel Simoni"
