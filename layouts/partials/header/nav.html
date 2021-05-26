@@ -17,7 +17,7 @@
                 <div class="sub-menu">
                 {{ range .Children }}
                   <div {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
-                    <a class="nes-text is-primary" href="{{ .URL | absLangURL }}">
+                    <a class="nes-text is-primary" href="{{ .URL | relLangURL }}">
                       {{ .Pre }} <span>{{ .Name }}</span>
                     </a>
                   </div>
@@ -25,7 +25,7 @@
                 </div>
               {{ else }}
                 <div class="p-2">
-                  <a class="nes-text link-light {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}" href="{{ .URL | absLangURL }}">
+                  <a class="nes-text link-light {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}" href="{{ .URL | relLangURL }}">
                     {{ .Pre }} <span>{{ .Name }}</span>
                   </a>
                 </div>

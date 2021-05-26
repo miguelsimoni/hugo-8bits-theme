@@ -1,1 +1,3 @@
-$background_image: "{{ .Site.Params.background.image | default "" }}";
+$custom_font_path: '{{ "vendor/PressStart2P/font/PressStart2P-Regular.ttf" | absURL }}';
+
+$background_image: "../images/{{ .Site.Params.background.image | default "" }}";

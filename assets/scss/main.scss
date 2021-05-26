@@ -1,8 +1,8 @@
 @use "_variables";
 
 @font-face {
-  font-family:"Press Start 2P";
-  src: url("/vendor/PressStart2P/font/PressStart2P-Regular.ttf") format("truetype");
+  font-family: "Press Start 2P";
+  src: url($custom_font_path) format("truetype");
 }
 
 body {

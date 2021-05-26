@@ -88,13 +88,13 @@ params:
 
   # Contact Form
   contact:
-    formAction: http://localhost:1313/
+    formAction: "#"
     validation:
       namePattern: ^[a-zA-Z]{3,}[a-zA-Z\s\-]*$
       emailPattern: ^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-]+\.[a-zA-Z]{2,4}(\.[a-zA-Z]{2})?$
 
   background:
-    image: "../images/background-astro.png"
+    image: "background-astro.png"
     parallax: true
     speed: 10
 
@@ -107,19 +107,19 @@ languages:
       main:
       - identifier: home
         name: Home
-        url: /
+        url: ""
         weight: 10
       - identifier: post
         name: Posts
-        url: /post
+        url: post
         weight: 50
       - identifier: contact
         name: Contact
-        url: /contact
+        url: contact
         weight: 90
       - identifier: about
         name: About
-        url: /about
+        url: about
         weight: 100
     params:
       navigation:
@@ -131,20 +131,20 @@ languages:
       main:
       - identifier: home
         name: Inicio
-        url: /
+        url: ""
         weight: 10
       - identifier: post
         name: Artículos
-        url: /post
+        url: post
         weight: 50
-      - identifier: about
-        name: Sobre
-        url: /about
-        weight: 100
       - identifier: contact
         name: Contacto
-        url: /contact
-        weight: 110
+        url: contact
+        weight: 90
+      - identifier: about
+        name: Sobre
+        url: about
+        weight: 100
     params:
       navigation:
         help: Ayuda
